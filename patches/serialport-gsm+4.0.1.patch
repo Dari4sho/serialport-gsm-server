@@ -1,0 +1,13 @@
+diff --git a/node_modules/serialport-gsm/lib/functions/ussd.js b/node_modules/serialport-gsm/lib/functions/ussd.js
+index 32a32d0..6c40116 100644
+--- a/node_modules/serialport-gsm/lib/functions/ussd.js
++++ b/node_modules/serialport-gsm/lib/functions/ussd.js
+@@ -24,7 +24,7 @@ module.exports = function (modem) {
+       let text;
+       if(splitted_newpart.length>1){
+         let decodable = /\"(.*?)\"/g.exec(splitted_newpart[1])
+-        if(decodable.length>1){
++        if(decodable && decodable.length>1){
+           text = Helper.decode16Bit(decodable[1]);
+         }else{
+           text = splitted_newpart[1]
