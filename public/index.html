@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Node.js GUI</title>
+  <style>
+      :not(:defined) {
+          visibility: hidden;
+      }
+
+      body {
+          font-family: sans-serif;
+      }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.17.1/cdn/themes/light.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.17.1/cdn/shoelace-autoloader.js"></script>
+</head>
+<body>
+<h1>GSM GUI</h1>
+<run-command-button command-id="7">Read SMS with ID 7</run-command-button>
+<sms-list></sms-list>
+<pre id="output"></pre>
+
+
+<script type="module" src="./components/run-command-button.js"></script>
+<script type="module" src="./components/sms-list.js"></script>
+</body>
+</html>

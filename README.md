@@ -26,14 +26,26 @@ Adds a simple multiline handling implementation as the original library does not
 
 Additionally, adds access to a couple of modem events on the sever for further processing, e.g. logging or sending to sockets.
 
+Also adds & serves a dummy web interface (WIP) based on webComponents ([showelace UI library](https://shoelace.style/)) that enables to build something more user-friendly.   
+- Lists all SMS messages
+- Renders messages content on button click
+
 ## Installation
 ```bash
 npm install
 ```
 
 ## Usage
+- Connect your GSM module (e.g. sim800c over USB)
+- Go to `modem/modem.js` and adjust the serial port to the one your modem is connected to & the serial port settings (or keep the defaults)
+- Optionally adjust the port the server listens to in `server.js`
+- Start the server with the following command
 ```bash
 npm start
 ```
 
-Props to the original author of the serialport-gsm & serialport libraries + everyone involved in the chain of dependencies.
+## Debugging
+To print every response line from the modem to the server console, uncomment the debug import in `server.js`
+
+---
+Props to the original author of the [serialport-gsm](https://github.com/zabsalahid/serialport-gsm) & [node-serialport](https://github.com/serialport/node-serialport) libraries + everyone involved in the chain of dependencies.

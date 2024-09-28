@@ -14,6 +14,9 @@ const app = express();
 const port = 3010;
 let server;
 
+// Serve static files from the public directory
+app.use(express.static('public'));
+
 // Initialize the modem when the server starts
 initializeModem((err) => {
   if (err) {
